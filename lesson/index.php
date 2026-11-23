@@ -22,7 +22,7 @@
     <!-- Boxicons CDN -->
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 
-
+<?php wp_head();  ?>
 </head>
 <body>
     <header>
@@ -821,5 +821,6 @@
 
     <!----- JS file link ----->
     <script src="<?php echo get_template_directory_uri(); ?>/assets/js/script.js"></script>
+<?php wp_footer(); ?>
 </body>
 </html>
