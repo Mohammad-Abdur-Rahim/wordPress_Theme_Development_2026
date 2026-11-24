@@ -2,6 +2,7 @@
 // Enqueue/link style & Script here ....
 function lessonlms_theme_script()
 {
+
     // Main theme Design css .......
     wp_enqueue_style('styles-css', get_template_directory_uri() . './assets/css/style.css');
 
@@ -25,6 +26,9 @@ function lessonlms_theme_script()
 
     // Main js </body> up ....
     wp_enqueue_script('main-js', get_template_directory_uri() . './assets/js/script.js', array('jquery'), '1.9.0', true);
+
+    // Google Fonts ...
+    wp_enqueue_style('googleFonts-css', 'https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;0,700;1,700&display=swap', array(), null);
 }
 // add_action('hook','lessonlms_theme_script');   After action hook added here ...
 add_action('wp_enqueue_scripts', 'lessonlms_theme_script');
