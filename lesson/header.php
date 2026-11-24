@@ -37,7 +37,7 @@
                             'container'      => false,
                             'menu_class'     => 'menu-list',
                             'fallback_cb'    => false,
-                            'walker'         => new LessonLMS_Menu_Walker() 
+                            'walker'         => new LessonLMS_Menu_Walker()
                         ));
                         ?>
                     </nav>
@@ -76,36 +76,18 @@
                     </div>
 
 
-
                     <div class="menu-div">
                         <nav class="main-menu-phone">
-                            <ul>
-                                <li><a class="active" href="#">Home</a></li>
-                                <li><a href="#">Courses</a>
-                                    <ul>
-                                        <li>
-                                            <a href="#">Web Design</a>
-                                            <ul>
-                                                <li><a href="#">HTML/CSS</a></li>
-                                                <li><a href="#">JavaScript</a></li>
-                                                <li><a href="#">Frameworks</a></li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a href="#">Web Development</a>
-                                            <ul>
-                                                <li><a href="#">Frontend</a></li>
-                                                <li><a href="#">Backend</a></li>
-                                                <li><a href="#">Full Stack</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="#">Graphic Design</a></li>
-                                        <li><a href="#">UI/UX Design</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="#">Pricing</a></li>
-                                <li><a href="#">Reviews</a></li>
-                            </ul>
+                            <?php
+
+                            wp_nav_menu(array(
+                                'theme_location' => 'primary-menu',
+                                'container'      => false,
+                                'menu_class'     => 'menu-list',
+                                'fallback_cb'    => false,
+                                'walker'         => new LessonLMS_Menu_Walker()
+                            ));
+                            ?>
 
                         </nav>
 
