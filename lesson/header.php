@@ -20,7 +20,7 @@
                         <?php the_custom_logo(); ?>
 
                     <?php else : ?>
-                        // also here add link home page 
+                        <!-- // also here add link home page  -->
                         <a href="<?php echo esc_url(home_url('/')); ?>">
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png" alt="logo">
                         </a>
