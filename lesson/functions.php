@@ -16,7 +16,7 @@ function lessonlms_theme_script()
     wp_enqueue_style('boxIcon-css', 'https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css', array(), '2.1.4');
 
     // Theme description css
-    wp_enqueue_style('theme-description-css', get_stylesheet() . './style.css');
+    wp_enqueue_style('theme-description-css', get_stylesheet());
 
     // jQuery load ---------------------------------------------------------------------------All
     wp_enqueue_script('jquery');
@@ -32,3 +32,21 @@ function lessonlms_theme_script()
 }
 // add_action('hook','lessonlms_theme_script');   After action hook added here ...
 add_action('wp_enqueue_scripts', 'lessonlms_theme_script');
+
+
+// Logo Dynamic Code here ....
+
+function lessonlms_menu_register() {
+
+
+  // ১. Custom Logo রেজিস্টার করা
+    add_theme_support( 'custom-logo', array(
+        'height'      => 60,
+        'width'       => 200, 
+        'flex-height' => true,
+        'flex-width'  => true,
+    ) );
+
+
+}
+add_action('after_setup_theme', 'lessonlms_menu_register');

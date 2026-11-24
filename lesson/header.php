@@ -1,21 +1,31 @@
 <!DOCTYPE html>
-<html <?php language_attributes();?>>
+<html <?php language_attributes(); ?>>
+
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php bloginfo('name');?> - <?php bloginfo('description');?></title>
- 
-<?php wp_head();  ?>
+    <title><?php bloginfo('name'); ?> - <?php bloginfo('description'); ?></title>
+
+    <?php wp_head();  ?>
 </head>
+
 <body <?php body_class(); ?>>
     <header>
         <div class="container">
             <div class="header-wrapper">
                 <!----- logo ----->
                 <div class="logo">
-                    <a href="index.html">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png" alt="logo">
-                    </a>
+                    <?php if (has_custom_logo()) : ?>
+
+                        <?php the_custom_logo(); ?>
+
+                    <?php else : ?>
+                        // also here add link home page 
+                        <a href="<?php echo esc_url(home_url('/')); ?>">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png" alt="logo">
+                        </a>
+
+                    <?php endif; ?>
                 </div>
 
                 <!----- main-menu and button ----->
@@ -66,7 +76,7 @@
                 </div>
 
                 <!----- menu item for phone ----->
-                <div  id="navPhone" class="menu-item-phone">
+                <div id="navPhone" class="menu-item-phone">
 
                     <!----- logo ----->
                     <div class="logo-div">
@@ -83,7 +93,7 @@
                             </svg>
                         </div>
                     </div>
-                    
+
 
 
                     <div class="menu-div">
@@ -122,7 +132,7 @@
                         <div class="button btn-black">
                             <a href="#">Sign Up</a>
                         </div>
-                    </div>    
+                    </div>
                 </div>
             </div>
         </div>
