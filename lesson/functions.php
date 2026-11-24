@@ -34,19 +34,41 @@ function lessonlms_theme_script()
 add_action('wp_enqueue_scripts', 'lessonlms_theme_script');
 
 
-// Logo Dynamic Code here ....
+// Logo & Menus Dynamic Code here  ....
 
-function lessonlms_menu_register() {
+function lessonlms_theme_setup() {
 
-
-  // ১. Custom Logo রেজিস্টার করা
+    // ১. Custom Logo 
     add_theme_support( 'custom-logo', array(
         'height'      => 60,
-        'width'       => 200, 
+        'width'       => 120, 
         'flex-height' => true,
         'flex-width'  => true,
     ) );
 
+    // ২. Navigation Menus 
+    register_nav_menus( array(
+        'primary-menu' => __( 'Primary Header Menu', 'lessonlms' ),
+        'footer-menu'  => __( 'Footer Menu', 'lessonlms' ),
+    ) );
 
+  
+    add_theme_support( 'post-thumbnails' ); 
+    add_theme_support( 'title-tag' );     
 }
-add_action('after_setup_theme', 'lessonlms_menu_register');
+
+add_action( 'after_setup_theme', 'lessonlms_theme_setup' );
+
+//  Custom Walker Class for Dropdown Menu
+
+class LessonLMS_Menu_Walker extends Walker_Nav_Menu {
+    
+    function start_lvl( &$output, $depth = 0, $args = null ) {
+        $indent = str_repeat("\t", $depth);
+        $output .= "\n$indent<ul class=\"sub-menu\">\n";
+    }
+}
+
+
+
+?>
